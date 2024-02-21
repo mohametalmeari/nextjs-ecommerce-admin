@@ -1,6 +1,7 @@
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import SettingsForm from "./components/settings-form";
 
 interface PageProps {
   params: { storeId: string };
@@ -24,7 +25,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
   return (
     <div className="flex flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        {/* TODO: Settings Form */}
+        <SettingsForm initialData={store} />
       </div>
     </div>
   );
