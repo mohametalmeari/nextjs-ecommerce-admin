@@ -16,10 +16,12 @@ import { Separator } from "@/components/ui/separator";
 import useOrigin from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Billboard } from "@prisma/client";
+import axios from "axios";
 import { Trash } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import * as z from "zod";
 
 const formSchema = z.object({
@@ -56,9 +58,49 @@ const BillboardForm: React.FC<BillboardFormProps> = ({ initialData }) => {
     },
   });
 
-  const onSubmit = () => {};
+  const onSubmit = async (data: BillboardFormValues) => {
+    try {
+      setLoading(true);
 
-  const onDelete = () => {};
+      if (initialData) {
+        await axios.patch(
+          `/api/${params.storeId}/billboards/${params.billboardId}`,
+          data
+        );
+      } else {
+        await axios.post(`/api/${params.storeId}/billboards`, data);
+      }
+
+      router.refresh();
+      router.push(`/${params.storeId}/billboards`);
+      toast.success(toastMessage, { duration: 2000 }); // Duration can be added to the toast
+    } catch (error) {
+      toast.error("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const onDelete = async () => {
+    try {
+      setLoading(true);
+      
+      await axios.delete(
+        `/api/${params.storeId}/billboards/${params.billboardId}`
+      );
+
+      router.refresh();
+      router.push("/");
+      toast.success("Billboard deleted.");
+    } catch (error) {
+      toast.error(
+        "Make sure you remove all categories using this billboard first."
+      );
+    } finally {
+      setLoading(false);
+      setOpen(false);
+    }
+  };
 
   return (
     <>
