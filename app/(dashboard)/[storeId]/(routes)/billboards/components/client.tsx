@@ -3,12 +3,12 @@
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { Billboard } from "@prisma/client";
+import { BillboardColumn } from "./columns";
 import { Plus } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 
 interface BillboardClientProps {
-  data: Billboard[];
+  data: BillboardColumn[];
 }
 
 const BillboardClient: React.FC<BillboardClientProps> = ({ data }) => {
