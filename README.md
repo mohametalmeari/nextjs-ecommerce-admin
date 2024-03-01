@@ -1,36 +1,199 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<a name="readme-top"></a>
 
-First, run the development server:
+<div align="center">
+  <img src="logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  <h3><b>README</b></h3>
+
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  <!--  - [Run tests](#run-tests)-->
+  - [Deployment](#deployment)
+
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
+
+<!-- PROJECT DESCRIPTION -->
+
+# 📖 FastPackage Admin <a name="about-project"></a>
+
+**FastPackage Admin** is a dynamic e-commerce admin dashboard designed to efficiently manage multiple stores. Users can easily create and manage personalized stores, ensuring a customized and efficient online retail experience.
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+    <ul>
+      <li><a href="https://reactjs.org/">React.js</a></li><li><a href="https://nextjs.org/">Next.js</a></li><li><a href="https://tailwindcss.com/">TailwindCSS</a></li><li><a href="https://ui.shadcn.com/">Shadcn</a></li>
+    </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+    <ul>
+      <li><a href="https://reactjs.org/">React.js</a></li><li><a href="https://nextjs.org/">Next.js</a></li><li><a href="https://stripe.com/">Stripe</a></li><li><a href="https://clerk.com/">Clerk</a></li>
+    </ul>
+</details>
+
+<details>
+  <summary>Database</summary>
+    <ul>
+      <li><a href="https://www.mysql.com/">MySQL</a></li><li><a href="https://www.prisma.io/">Prisma</a></li><li><a href="https://app.planetscale.com/">PlanetScale </a></li>
+    </ul>
+</details>
+
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+- **Create customized store**
+- **Create and manage products**
+- **Monitor orders and revenues**
+- **Project supports dark mode**
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://fastpackage-admin.vercel.app/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+
+### Prerequisites
+In order to run this project you need: Node.js
+
+
+### Setup
+Clone this repository to your desired folder:
+```sh
+cd my-folder
+git clone https://github.com/mohametalmeari/nextjs-ecommerce-admin.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install
+Install this project with:
+```sh
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Usage
+To run the project, execute the following command:
+```sh
+npm run dev
+```
+<!--
+### Run tests
+To run tests, run the following command:
+```sh
+npm test
+```
+-->
+### Deployment
+You can deploy this project on vercel.app
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- AUTHORS -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 👥 Authors <a name="authors"></a>
 
-## Deploy on Vercel
+👤 **Mohamad**
+- GitHub: [@mohametalmeari](https://github.com/mohametalmeari)
+- LinkedIn: [@mohametalmeari](https://www.linkedin.com/in/mohamet-almeari/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- **Add rating to products**
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+This is an improved version of a project was originally created by [Antonio](https://github.com/AntonioErdeljac)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **What is the license of this project?**
+  - This project is licensed under the MIT license.
+  
+- **How can I contribute to this project?**
+  - You can fork this repository and submit a pull request.
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
