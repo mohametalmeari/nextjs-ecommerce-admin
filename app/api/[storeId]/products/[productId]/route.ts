@@ -13,7 +13,7 @@ export async function GET(
     }
 
     const product = await prismadb.product.findUnique({
-      where: { id: params.productId },
+      where: { id: params.productId, isArchived: false },
       include: { images: true, category: true, size: true, color: true },
     });
 
@@ -33,6 +33,7 @@ export async function PATCH(
     const body = await req.json();
     const {
       name,
+      inventory,
       price,
       categoryId,
       colorId,
@@ -48,6 +49,10 @@ export async function PATCH(
 
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
+    }
+
+    if (!inventory) {
+      return new NextResponse("Inventory is required", { status: 400 });
     }
 
     if (!images || !images.length) {
@@ -85,6 +90,7 @@ export async function PATCH(
       where: { id: params.productId },
       data: {
         name,
+        inventory,
         price,
         categoryId,
         colorId,
