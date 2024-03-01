@@ -12,6 +12,7 @@ export async function POST(
     const body = await req.json();
     const {
       name,
+      inventory,
       price,
       categoryId,
       colorId,
@@ -27,6 +28,10 @@ export async function POST(
 
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
+    }
+
+    if (!inventory) {
+      return new NextResponse("Inventory is required", { status: 400 });
     }
 
     if (!images || !images.length) {
@@ -64,6 +69,8 @@ export async function POST(
     const product = await prismadb.product.create({
       data: {
         name,
+        inventory,
+        sold: 0,
         price,
         isFeatured,
         isArchived,
@@ -95,6 +102,8 @@ export async function GET(
     const categoryId = searchParams.get("categoryId") || undefined;
     const colorId = searchParams.get("colorId") || undefined;
     const sizeId = searchParams.get("sizeId") || undefined;
+    const maxPrice = searchParams.get("maxPrice") || undefined;
+    const minPrice = searchParams.get("minPrice") || undefined;
     const isFeatured = searchParams.get("isFeatured");
 
     if (!params.storeId) {
@@ -107,6 +116,10 @@ export async function GET(
         categoryId,
         colorId,
         sizeId,
+        price: {
+          lte: maxPrice ? parseInt(maxPrice) : undefined,
+          gte: minPrice ? parseInt(minPrice) : undefined,
+        },
         isFeatured: isFeatured ? true : undefined,
         isArchived: false,
       },
