@@ -45,11 +45,24 @@ export async function POST(req: Request) {
       include: { orderItems: true },
     });
 
-    const productIds = order.orderItems.map((orderItem) => orderItem.productId);
+    const productIds = order.orderItems.map((orderItem) => ({
+      id: orderItem.productId,
+      amount: orderItem.amount,
+    }));
 
-    await prismadb.product.updateMany({
-      where: { id: { in: [...productIds] } },
-      data: { isArchived: true },
+    productIds.forEach(async (item) => {
+      const updatedProduct = await prismadb.product.update({
+        where: { id: item.id },
+        data: {
+          sold: { increment: item.amount },
+          inventory: { decrement: item.amount },
+        },
+      });
+
+      await prismadb.product.update({
+        where: { id: item.id },
+        data: { isArchived: updatedProduct.inventory === 0 },
+      });
     });
   }
 
