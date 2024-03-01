@@ -38,7 +38,7 @@
 
 # 📖 FastPackage Admin <a name="about-project"></a>
 
-**FastPackage Admin** is a dynamic e-commerce admin dashboard designed to efficiently manage multiple stores. Users can easily create and manage personalized stores, ensuring a customized and efficient online retail experience.
+**FastPackage Admin** is a dynamic e-commerce admin dashboard designed to efficiently manage multiple stores. Users can easily create and manage personalized stores, ensuring a customized and efficient online retail experience. Check out the store repo [here](https://github.com/mohametalmeari/nextjs-ecommerce-store).
 
 ## 🛠 Built With <a name="built-with"></a>
 
